@@ -48,3 +48,106 @@
 // totalSpent += payment;
 
 // console.log(`Общая сумма, потраченная в магазине: ${totalSpent}`);
+
+
+
+                // if - else 
+
+
+// const stars = 8;
+// let price;
+
+// if (stars === 1) {
+//     price = 20;
+// } else if (stars === 2) {
+//     price = 30;
+// } else if (stars === 3) {
+//     price = 50;
+// } else if (stars === 4) {
+//     price = 75;
+// } else if (stars === 5) {
+//     price = 120;
+// } else {
+//     console.log('Такого кол-ва звезд нет');
+// }
+
+// console.log(price);
+
+                    //    switch
+
+
+// const stars = 8;
+// let price;
+
+// switch (stars) {
+//     case 1:
+//         price = 20;
+//         break;
+    
+//     case 2:
+//         price = 30;
+//         break;
+    
+//     case 3:
+//         price = 50;
+//         break;
+    
+//     case 4:
+//         price = 75;
+//         break;
+    
+//     case 5:
+//         price = 120;
+//         break;
+    
+//     default:
+//         console.log('Такого кол-ва звезд нет');
+
+// }
+
+// console.log(price);
+
+
+// const stars = 3;
+// let price;
+
+// if (stars === 1 || stars === 2) {
+//     price = 20;
+
+// } else if (stars === 3 || stars === 4) {
+//     price = 50;
+
+// } else if (stars === 5) {
+//     price = 120;
+// } else {
+//     console.log('Такого кол-ва звезд нет');
+// }
+
+// console.log(price);
+
+
+// const stars = 4;
+// let price;
+
+// switch (stars) {
+//     case 1:
+//     case 2:
+//         price = 20;
+//         break;
+    
+    
+//     case 3:
+//     case 4:    
+//         price = 50;
+//         break;
+    
+//     case 5:
+//         price = 120;
+//         break;
+    
+//     default:
+//         console.log('Такого кол-ва звезд нет');
+
+// }
+
+// console.log(price);
