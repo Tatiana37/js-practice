@@ -151,3 +151,215 @@
 // }
 
 // console.log(price);
+
+
+
+//  Модуль 2 
+
+
+//  массивы
+
+//  Посчитать общую сумму в корзине:
+
+// const cart = [54, 28, 105, 70, 92, 17, 120];
+
+//  2. объявить переменную total до цикла
+// let total = 0;
+
+//  1. перебрать массив
+// for (let i = 0; i < cart.length; i += 1){
+//     console.log(cart[i]);
+
+// //  3. каждый элемент приплюсовать к total
+//     total += cart[i];
+// }
+
+// console.log(cart);
+
+    //  ИЛИ:
+
+// for (const value of cart) {
+//     total += value;
+//     }
+
+
+// console.log("Total:", total);
+
+
+//  4 добавить такс 
+
+// for (let i = 0; i < cart.length; i += 1){
+//     cart[i] = Math.round(cart[i] * 1.1);
+// }
+
+// console.log(cart);
+
+
+
+
+//  посчитать сумму всех чётных чисел
+
+// const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
+// let total = 0;
+
+//   1 переменная тотал
+
+//  2  перебрать массив
+// for (let i = 0; i < numbers.length; i += 1) {
+//     const number = numbers[i];
+//     console.log(number);
+
+//     //  3 на каждой иттерации проверить элемент на чётность
+//     if (numbers[i] % 2 === 0) {
+//         console.log('Чётное!');
+
+//         //  4 если чётный, плюсуем к тотал
+//         total += number;
+//     }
+// }
+
+// console.log('Total: ', total);
+
+//  ИЛИ
+
+// for (const number of numbers) {
+//     console.log(number);
+
+//     if (number % 2 === 0) {
+//         console.log(`${number} -чётное`);
+//         total += number;
+
+//     }
+// }
+
+// console.log('Total: ', total);
+
+            // ИЛИ
+
+
+// for (const number of numbers) {
+//     if (number % 2 !== 0) {
+//         console.log('эту итерацию нужно пропустить', number);
+//         continue;
+//     }
+
+//     console.log(`${number} - чётное!`);
+//     total += number;
+// }
+
+
+// console.log('Total: ', total);
+
+
+
+//  Скрипт поиска логина (логика от обратного)
+
+// const logins = ['m4ngoDone', 'kiwidab3st', 'polyIscute', 'aj4xth3m4n'];
+// const loginToFind = 'polyIscute';
+// let message = `Пользователь ${loginToFind} не найден.`;
+
+// for (let i = 0; i < logins.length; i += 1) {
+//     const login = logins[i];
+
+//     console.log('Login: ', login);
+//     console.log(`${login} === ${loginToFind}:`, login === loginToFind);
+
+//     if (login === loginToFind) {
+//         console.log('ура, найден!');
+//         message = `Ползователь ${loginToFind} найден`;
+//         break;
+//     }
+// }
+
+// console.log(message);
+
+//    ИЛИ 
+
+// const logins = ['m4ngoDone', 'kiwidab3st', 'polyIscute', 'aj4xth3m4n'];
+// const loginToFind = 'polyIscute';
+// let message = `Пользователь ${loginToFind} не найден.`;
+
+
+// for (const login of logins) {
+//      console.log('Login: ', login);
+//     console.log(`${login} === ${loginToFind}:`, login === loginToFind);
+
+//     if (login === loginToFind) {
+//         console.log('ура, найден!');
+//         message = `Ползователь ${loginToFind} найден`;
+//         break;
+//     }
+// }
+
+// console.log(message);
+
+// const logins = ['m4ngoDone', 'kiwidab3st', 'polyIscute', 'aj4xth3m4n'];
+// const loginToFind = 'polyIscute';
+// let message = `Пользователь ${loginToFind} не найден.`;
+
+
+// console.log(logins.includes(loginToFind));
+
+        // ИЛИ
+
+
+// const logins = ['m4ngoDone', 'kiwidab3st', 'polyIscute', 'aj4xth3m4n'];
+// const loginToFind = 'polyIscute';
+// // декларативный код
+// const message = logins.includes(loginToFind)
+//     ? 'Ползователь ${loginToFind} найден'
+//     : 'Пользователь ${loginToFind} не найден.'; 
+
+// console.log(message);
+
+
+//  скрипт для поиска наименьшего числа в массиве, при условии, что числа не повторяются
+
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let smallestNumber = numbers[0];
+
+// for (const number of numbers) {
+//     if (number < smallestNumber) {
+//         smallestNumber = number;
+//     }
+// }
+
+// console.log('smallestNumber: ', smallestNumber);
+
+
+//  join
+
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+
+// const string = friends.join('-');
+// console.log(friends);
+// console.log(string);
+
+
+//  Inverted
+
+// const string = 'JavaScript';
+// const letters = string.split('');
+// let invertedString = '';
+
+// console.log(letters);
+
+// for (const letter of letters) {
+//     console.log(letter);
+// const isEqual = letter === letter.toLowerCase();
+
+// invertedString += isEqual ? letter.toUpperCase() : letter.toLowerCase();
+
+// }
+
+// console.log('invertedString: ', invertedString)
+
+
+
+//  SLUG (декларативный код, абстракция. Методы вызываются последовательно)
+
+// const title = 'Top 10 benefits of React framework';
+
+// const slug = title.toLowerCase().split(' ').join('-');
+
+// console.log(slug);
