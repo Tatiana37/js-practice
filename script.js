@@ -363,3 +363,189 @@
 // const slug = title.toLowerCase().split(' ').join('-');
 
 // console.log(slug);
+
+
+//  найти логин из списка поролей
+
+// const logins = ['m4ngoDoge', 'kiwidab3st', 'polyIscute', 'aj4xth3m4n'];
+
+// const findLogin = function (allLogins, loginToFind) {
+//     for (const login of allLogins) {
+//         if (login === loginToFind) {
+//             return `Пользователь ${loginToFind} найден`;
+//         }
+//     }
+
+//     return `Пользователь ${loginToFind} не найден`;
+// }
+
+// console.log(findLogin(logins, 'avacod3r'));
+// console.log(findLogin(logins, 'kiwidab3st'));
+// console.log(findLogin(logins, 'j4maL'));
+// console.log(findLogin(logins, 'polyIscute'));
+
+// const logins = ['m4ngoDoge', 'kiwidab3st', 'polyIscute', 'aj4xth3m4n'];
+
+// const findLogin = function (allLogins, loginToFind) {
+//     const message = allLogins.includes(loginToFind) 
+//     ? `Пользователь ${loginToFind} найден`
+//         : `Пользователь ${loginToFind} не найден`;
+//     return message;
+// }
+
+// console.log(findLogin(logins, 'avacod3r'));
+// console.log(findLogin(logins, 'kiwidab3st'));
+// console.log(findLogin(logins, 'j4maL'));
+// console.log(findLogin(logins, 'polyIscute'));
+
+// const logins = ['m4ngoDoge', 'kiwidab3st', 'polyIscute', 'aj4xth3m4n'];
+
+// const findLogin = function (allLogins, loginToFind) {
+//     return  allLogins.includes(loginToFind) 
+//         ? `Пользователь ${loginToFind} найден`
+//         : `Пользователь ${loginToFind} не найден`;
+    
+// }
+
+// console.log(findLogin(logins, 'avacod3r'));
+// console.log(findLogin(logins, 'kiwidab3st'));
+// console.log(findLogin(logins, 'j4maL'));
+// console.log(findLogin(logins, 'polyIscute'));
+
+
+//  поиск наименьшего числа
+
+// const findSmallestNumber = function(numbers) {
+// let smallestNumber = numbers[0];
+
+// for (const number of numbers) {
+//     if (number < smallestNumber) {
+//         smallestNumber = number;
+//     }
+//     }
+//     return smallestNumber;
+// }
+// console.log(findSmallestNumber[5, 18, 23, -2, 7, 10, 19]);
+// console.log(findSmallestNumber[45, 18, 0, 24, 17, 75, 19]);
+// console.log(findSmallestNumber[51, 67, 5, 24, 89, 45, 56]);
+
+
+
+// const changeCase = function (string) {
+//     const letters = string.split('');
+//     let invertedString = '';
+
+//     for (const letter of letters) {
+//         const isInLowerCase = letter === letter.toLowerCase();
+
+//         invertedString += isInLowerCase
+//             ? letter.toUpperCase()
+//             : letter.toLowerCase();
+//     }
+    
+//     return invertedString;
+// } 
+
+// console.log(changeCase('JavaScript'));
+// console.log(changeCase('qweRTY'));
+// console.log(changeCase('mAnGo'));
+// console.log(changeCase('AjAX'));
+
+
+//  argumets
+
+// const fn = function () {
+//     console.log(arguments);
+
+//     const args = Array.from(arguments);
+
+//     console.log(args);
+// }
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+
+// new arguments
+
+// const fn = function (...args) {
+
+//     console.log(args);
+// }
+// fn('hello', 1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+// const fn = function (a, b, c,...args) {
+//     console.log(`${a} ${b} ${c}`);
+//     console.log(args);
+// }
+// fn('hello', 1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+//  задачи
+
+//  напиши функцию add сложения для произвольного кол-ва аргументов
+
+// const add = function (...args) {
+//     console.log(args);
+//     let total = 0;
+
+//     for (const arg of args) {
+//         total += arg;
+//     }
+
+//     return total;
+// }
+
+// console.log(add(1, 2, 3));
+// console.log(add(1, 2, 3, 4, 5, 6, 7));
+
+
+//  напиши функцию filterNumbers(array [,number1, ...]),
+//  которая:
+//  - первым аргументом принимает массив чисел
+//  - после первого аргумента может быть произвольное кол-во других эл-вб,
+//    которые будут числами
+//  - функция должна вернуть новый массив, 
+//    в котором будут только те аргументы, начиная со второго,
+//    для которых есть аналог в оригинальном массиве.
+
+// const filterNumbers = function (array, ...args) {
+//     console.log('array: ', array);
+//     console.log('args: ', args);
+// }
+// console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
+// console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15)); 
+// console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64)); 
+
+
+// const filterNumbers = function (array, ...args) {
+//     console.log('array: ', array);
+//     console.log('args: ', args);
+//     const uniqueElements = [];
+
+    // for (const element of array) {    
+    //     if (args.includes(element)) {
+    //         uniqueElements.push(element);
+
+
+//             console.log(`${element} есть везде!`);
+//         }
+//     }
+
+//     return uniqueElements;
+// }
+// console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
+// console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15)); 
+// console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64)); 
+
+
+
+
+
+
+
+
+
