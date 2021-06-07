@@ -83,23 +83,23 @@
 //     case 1:
 //         price = 20;
 //         break;
-    
+
 //     case 2:
 //         price = 30;
 //         break;
-    
+
 //     case 3:
 //         price = 50;
 //         break;
-    
+
 //     case 4:
 //         price = 75;
 //         break;
-    
+
 //     case 5:
 //         price = 120;
 //         break;
-    
+
 //     default:
 //         console.log('Такого кол-ва звезд нет');
 
@@ -134,17 +134,17 @@
 //     case 2:
 //         price = 20;
 //         break;
-    
-    
+
+
 //     case 3:
 //     case 4:    
 //         price = 50;
 //         break;
-    
+
 //     case 5:
 //         price = 120;
 //         break;
-    
+
 //     default:
 //         console.log('Такого кол-ва звезд нет');
 
@@ -404,7 +404,7 @@
 //     return  allLogins.includes(loginToFind) 
 //         ? `Пользователь ${loginToFind} найден`
 //         : `Пользователь ${loginToFind} не найден`;
-    
+
 // }
 
 // console.log(findLogin(logins, 'avacod3r'));
@@ -442,7 +442,7 @@
 //             ? letter.toUpperCase()
 //             : letter.toLowerCase();
 //     }
-    
+
 //     return invertedString;
 // } 
 
@@ -540,6 +540,395 @@
 // console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
 // console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15)); 
 // console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64)); 
+
+
+
+//  МОДУЛЬ 3
+
+
+//  Объекты
+
+// const playlist = {
+//     name: 'мой супер плэйлист',
+//     ratiing: 5,
+//     tracks: ['трек-1', 'трек-2', 'трек-3'],
+//     trackCount: 3,
+// };
+// console.log(playlist);
+
+//  ЛИТЕРАЛ
+
+// const x = {};
+
+// const fn = function (myObject) {
+//     //  myObject = {a: 1, b: 2}
+//     console.log(myObject);
+// }
+
+// fn({ a: 1, b: 2 });
+
+// const rtfn = function () {
+//     return { a: 5 };
+
+// }
+
+// console.log({ rtfn });
+
+// доступ
+
+// const playlist = {
+//     name: 'мой супер плэйлист',
+//     ratiing: 5,
+//     tracks: ['трек-1', 'трек-2', 'трек-3'],
+//     trackCount: 3,
+// };
+// console.log(playlist);
+// console.log(playlist.name);
+// console.log(playlist.tracks);
+// console.log(playlist.trackCount);
+
+// console.log(playlist.ratiing);
+// //  или
+// console.log(playlist['ratiing']);
+
+//  массив и функции - это объекты!
+
+// const a = [1, 2, 3];
+
+// a.hello = ':)';
+
+// console.log(a);
+
+// const fn = function () {
+//     console.log('hello');
+// }
+// fn.hello = ':)';
+
+// console.dir(fn.hello);
+
+
+// const playlist = {
+//     name: 'мой супер плэйлист',
+//     ratiing: 5,
+//     tracks: ['трек-1', 'трек-2', 'трек-3'],
+//     trackCount: 3,
+
+
+//     // (метод объекта)
+//     getName: function () {
+//         console.log('Ага это getName :)');  
+//     }
+//     //  ИЛИ (метод объекта)
+
+//     // getName(a) {
+//     //     console.log('Ага это getName :)', a);
+//     // }
+// };
+// console.log(playlist);
+// playlist.getName(5);
+
+
+// const playlist = {
+//     name: 'мой супер плэйлист',
+//     ratiing: 5,
+//     tracks: ['трек-1', 'трек-2', 'трек-3'],
+//     trackCount: 3,
+//     changeName(newName) {
+//         console.log('this внутри changeName: ', this);
+
+//         this.name = newName;
+//     },
+//     addTrack(track) {
+//         this.tracks.push(track);
+//         // this.trackCount = this.tracks.length;  ===== это плохо см. ниже
+//     },
+//     updateRating(newRating) {
+//         this.ratiing = newRating;
+//     },
+//     getTrackCount() {
+//         return this.tracks.length;
+//     }
+// };
+
+// playlist.changeName('Новое имя');
+
+// playlist.addTrack('Новый трек');
+// console.log(playlist.getTrackCount());
+
+// playlist.updateRating(4);
+// console.log(playlist);
+
+//  перебор объекта
+
+// const feedback = {
+//     good: 5,
+//     neutral: 10,
+//     bad: 3,
+// };
+
+// let totalFeedback = 0;
+
+// const keys = Object.keys(feedback);
+
+// console.log(keys);
+
+// for (const key of keys) {
+//     console.log(key);
+//     console.log(feedback[key]);
+
+//     totalFeedback += feedback[key];
+// }
+
+// console.log('totalFeedback: ', totalFeedback);
+
+// const values = Object.values(feedback);
+
+// console.log(values);
+
+// for (const value of values) {
+//     console.log(value);
+
+//     totalFeedback += value;
+// }
+
+// console.log('totalFeedback: ', totalFeedback) ;
+
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: true },
+//     { name: 'Alax', online: false },
+// ];
+// console.table(friends);
+
+// for (const friend of friends) {
+//     console.log(friend);
+
+//     friend.newprop = 555;
+// }
+
+// console.table(friends);
+
+
+// ищеи друга по имени
+
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: true },
+//     { name: 'Alax', online: false },
+// ];
+// console.table(friends);
+
+
+// const findFriendByName = function (allFriends, friendName) {
+//     for (const friend of allFriends) {
+//         console.log(friend);
+//         console.log(friend.name);
+
+//         if (friend.name === friendName) {
+//             return 'Нашли!!!';
+//         }
+//     }
+
+//     return 'Не нашли';
+// };
+    
+//     console.log(findFriendByName(friends, 'Poly'));
+//     console.log(findFriendByName(friends, 'Chelsy'));
+
+
+//  получаем имена всех друзей
+
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: true },
+//     { name: 'Alax', online: false },
+// ];
+// console.table(friends);
+
+// const getAllNames = function (allFriends) {
+//     const names = [];
+
+//     for (const friend of allFriends) {
+//         console.log(friend.name);
+
+//         names.push(friend.name);
+//     }
+
+//     return names;
+//  };
+
+// console.log(getAllNames(friends));
+
+//  получть объекты (имена друзей), которые только онлайн
+
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: true },
+//     { name: 'Alax', online: false },
+// ];
+// console.table(friends);
+
+// const getOnlineFriends = function (allFriends) {
+//     const onlineFriends = [];
+
+//     for (const friend of allFriends) {
+//         console.log(friend);
+//         console.log(friend.online);
+
+//         if (friend.online) {
+//             onlineFriends.push(friend);
+//         }
+//     }
+
+//     return onlineFriends;
+// }
+
+// console.log(getOnlineFriends(friends));
+
+
+//  Офлайн
+
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: false },
+//     { name: 'Poly', online: true },
+//     { name: 'Alax', online: false },
+// ];
+// console.table(friends);
+
+// const getOffLineFriends = function (allFriends) {
+//     const offLineFriends = [];
+
+//     for (const friend of allFriends) {
+//         console.log(friend.online);
+
+//         if (!friend.online) {
+//             offLineFriends.push(friend);
+//         }
+//     }
+
+//     return offLineFriends;
+// }
+
+// console.log(getOffLineFriends(friends));
+
+
+//  создаем два массива онлай и офлайн
+//  если тру - в первый, если фолс -во второй
+
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: false },
+//     { name: 'Poly', online: true },
+//     { name: 'Alax', online: false },
+// ];
+// console.table(friends);
+
+// const getFriendsByOnlineStatus = function (allFriends) {
+//     const friendsByStatus = {
+//         online: [],
+//         offline: [],
+//     }
+
+//     for (const friend of allFriends) {
+//         if (friend.online) {
+//             friendsByStatus.online.push(friend);
+//             continue;
+//         } 
+//         friendsByStatus.offline.push(friend);
+        
+//         //  const key = friend.online ? 'online' : 'offline';
+//         //  friendsByStatus[key].push(friend);
+//     }
+
+//     return friendsByStatus;
+// }
+
+// console.log(getFriendsByOnlineStatus(friends));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
