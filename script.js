@@ -851,6 +851,37 @@
 // console.log(getFriendsByOnlineStatus(friends));
 
 
+//  пребор объекта через for in 
+
+// const hotel = {
+//   name: 'Resort Hotel',
+//   stars: 5,
+//   capacity: 100,
+// };
+
+// // Перебор ключей объекта hotel
+// for (const key in hotel) {
+//   console.log('Key: ', key);
+// }
+
+// /*
+//  * Key: name
+//  * Key: stars
+//  * Key: capacity
+//  */
+
+// const hotel = {
+//   name: 'Resort Hotel',
+//   stars: 5,
+//   capacity: 100,
+// };
+
+// const keys = Object.keys(hotel); // ["name", "stars", "capacity"]
+// const values = Object.values(hotel); // ["Resort Hotel", 5, 100]
+// const entries = Object.entries(hotel); // [Array(2), Array(2), Array(2)]
+
+
+
 
 
 
