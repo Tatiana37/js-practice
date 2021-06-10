@@ -1,4 +1,4 @@
-// console.log(5 && 7 && 0 && 'hello')
+// console.log(5 && 7 && 0 && 'hello');
 
 // console.log(!false)
 
@@ -881,16 +881,322 @@
 // const entries = Object.entries(hotel); // [Array(2), Array(2), Array(2)]
 
 
+// const x = {
+//     a: 1,
+//     b: 2,
+//     c: 50,
+//     d: 100,
+// }
+// console.log(Object.keys(x).length);
+
+
+// =================================================================
+
+//  МОДУЛЬ 3, занятие 6
+
+//  поиск минимального или максимального значения
+
+// const temps = [18, 14, 12, 13, 21, 17, 29, 24];
+
+// console.log(Math.max(1, 4, 17, 5, 6));
+// //  распыление массива через ... 
+// // тоже самое = Math.min(18, 14, 12, 13, 21, 17, 29, 24)
+// console.log(Math.min(...temps));
+
+//  распыление массивов
+
+// const lastWeekTemps = [1, 2, 3];
+// const currentTemps = [4, 5, 6];
+// const nextWeekTemps = [7, 8, 9];
+
+// const allTemps = [...lastWeekTemps, ...currentTemps, ...nextWeekTemps];
+// console.log(allTemps);
+
+
+//  распыление объектов
+
+// const a = { x: 1, y: 2 };
+// const b = { x: 0, z: 3 };
+
+// // const c = Object.assign({}, a, b);
+
+// const c = {
+//     ...a,
+//     x: 10,
+//     ...b,
+//     y: 20,
+// }
+
+// console.log(c);
+
+
+//  настройки web страницы...
+
+// const defaultSettinds = {
+//     theme: 'light',
+//     showNotifications: true,
+//     hideSidebar: false,
+// }
+
+// const userSettings = {
+//     showNotifications: false,
+//     hideSidebar: true,
+// }
+
+// const finalSettings = {
+//     ...defaultSettinds,
+//     ...userSettings,
+// }
+// console.log(finalSettings);
+
+
+// const playlist = {
+//     name: 'мой супер плэйлист',
+//     rating: 5,
+//     tracks: ['трек-1', 'трек-2', 'трек-3'],
+//     trackCount: 3,
+// };
+// //  деструктуризация объекта, или распаковка: (const { } = playlist;)
+
+// const { rating, tracks, name, trackCount, author } = playlist;
+// const { rating, tracks, name, trackCount: numberOfTacks = 0, author = 'qwe'} = playlist;
+
+
+// // console.log(rating);
+// // console.log(tracks);
+// // console.log(name);
+// // console.log(trackCount);
+// // console.log(name, rating, tracks, trackCount, author);
+
+// // console.log(author);
+// // console.log(numberOfTacks);
+
+
+//  глубокая деструктуризация
+
+// const profile = {
+//     name: 'Jaques Gluke',
+//     tag: 'jgluke',
+//     location: 'Ocho Rios, Jmaica',
+//     avatar: 567,
+//     status: {
+//         followers: 5603,
+//         views: 4827,
+//         likes: 1308,
+//     },
+// };
+
+// // const { name, tag, avatar, status } = profile;
+// // const { followers, views, likes } = status;
+
+// const {
+//     name,
+//     tag,
+//     avatar,
+//     status: { followers, views, likes },
+// } = profile;
+
+// // console.log(name, tag, avatar, status);
+// console.log(name, tag, avatar, followers, views, likes );
+
+
+//  деструктуризация массивов
+
+// const rgb = [255, 100, 80];
+
+// // const [a, b, c] = rgb;
+// // console.log(a, b, c);
+// const [a, , c] = rgb;
+// console.log(a, c);
+
+// const authors = {
+//     kiwi: 4,
+//     poly: 7,
+//     ajax: 9,
+//     mango: 6,
+// }
+// const entries = Object.entries(authors);
+// // console.log(entries);
+
+// // for (const entry of entries) {
+// //     // console.log(entry);
+// //     // const name = entry[0];
+// //     // const rating = entry[1];
+
+// //     //  ИЛИ
+// //     const [name, rating] = entry;
+
+// //     console.log(name, rating);
+// // }
+
+// //  ИЛИ
+// for (const [name, rating] of entries) {
+    
+//     console.log(name, rating);
+// }
+
+
+//  Операция rest (сбор):
+
+
+// const profile = {
+//     name: 'Jaques Gluke',
+//     tag: 'jgluke',
+//     location: 'Ocho Rios, Jmaica',
+//     avatar: 567,
+//     status: {
+//         followers: 5603,
+//         views: 4827,
+//         likes: 1308,
+//     },
+// };
+
+// const { name, tag, ...restProps } = profile;
+
+// console.log(name, tag );
+// console.log(restProps);
+
+// =======================================================
+
+//  Паттерн 'объект настроек'
+//  деструктуризация паттерна-объекта в подписи функции
+//  rest при деструктуризации в подписи
+
+
+// const showProfileInfo = function ({
+//     name,
+//     tag,
+//     location,
+//     avatar,
+//     status: { followers, views, likes }
+// }) {
+//     console.log(name, tag, location, avatar, followers, views, likes);
+// };
+
+// Или
+// const showProfileInfo = function (userProfile) {
+//     const {
+//         name,
+//         tag,
+//         location,
+//         avatar,
+//         status: { followers, views, likes }
+//     } = userProfile;
+
+//     console.log(name, tag, location, avatar, followers, views, likes);
+// };
+
+// ИЛИ
+
+// const profile = {
+//     name: 'Jaques Gluke',
+//     tag: 'jgluke',
+//     location: 'Ocho Rios, Jmaica',
+//     avatar: 567,
+//     status: {
+//         followers: 5603,
+//         views: 4827,
+//         likes: 1308,
+//     },
+// };
+
+// showProfileInfo(profile);
+
+
+const cart = {
+    items: [],
+    getItems() {
+        return this.items;
+    },
+    add(product) {
+        console.table(this.items);
+
+        for (const item of this.items) {
+            if (item.name === product.name) {
+                item.quantity += 1;
+                return;
+            }
+        }
+        const newProduct = {
+            ...product,
+            quantity: 1,
+        };
+
+        this.items.push(newProduct);
+    },
+    remove(productName) {
+        const { items } = this;
+        for (let i = 0; i < items.length; i+= 1) {
+            // const item = this.items[i];
+            const { name } = items[i];
+        // for (let i = 0; i < this.items.length; i+= 1) {
+        //     // const item = this.items[i];
+        //     const { name } = this.items[i];
+            if (productName === name) {
+                console.log('нашли такой продукт: ', productName);
+                console.log('индекс: ', i);
+
+                items.splice(i, 1);
+            }  
+        }
+        // for (const item of this.items) {
+        //     console.log(item);
+
+        //     if (productName === item.name) {
+        //         console.log('нашли такой продукт ', productName);
+        //     }
+        // }
+    },
+    clear() {
+        this.items = [];
+    },
+    countTotalPrice() {
+        // console.log(this.items);
+        const { items } = this;
+
+        let total = 0;
+
+        for (const { price, quantity } of items) {
+            total += price * quantity;
+        }
+        return total;
+    },
+    increaseQuantity(productName) { },
+    decreaseQuantity(productName) { },
+    getProductTotalPrice(product) { },
+};
+
+console.log(cart.getItems);
+
+cart.add({ name: 'apples', price: 50 });
+cart.add({ name: 'peach', price: 60 });
+cart.add({ name: 'lemons', price: 60 });
+cart.add({ name: 'lemons', price: 60 });
+cart.add({ name: 'plums', price: 110 });
+cart.add({ name: 'plums', price: 110 });
+cart.add({ name: 'plums', price: 110 });
 
 
 
+console.table(cart.getItems());
+
+console.log('Total: ', cart.countTotalPrice());
 
 
+// cart.remove('peach');
+// console.table(cart.getItems());
+
+// cart.clear();
+// console.log(cart.getItems());
+
+console.log('Total: ', cart.countTotalPrice());
 
 
+const getProductTotalPrice = function ({ price, quantity }) {
+    return price * quantity;
+};
 
-
-
+console.log(getProductTotalPrice(cart.items[3]));
 
 
 
