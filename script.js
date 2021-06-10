@@ -1103,100 +1103,100 @@
 // showProfileInfo(profile);
 
 
-const cart = {
-    items: [],
-    getItems() {
-        return this.items;
-    },
-    add(product) {
-        console.table(this.items);
+// const cart = {
+//     items: [],
+//     getItems() {
+//         return this.items;
+//     },
+//     add(product) {
+//         console.table(this.items);
 
-        for (const item of this.items) {
-            if (item.name === product.name) {
-                item.quantity += 1;
-                return;
-            }
-        }
-        const newProduct = {
-            ...product,
-            quantity: 1,
-        };
+//         for (const item of this.items) {
+//             if (item.name === product.name) {
+//                 item.quantity += 1;
+//                 return;
+//             }
+//         }
+//         const newProduct = {
+//             ...product,
+//             quantity: 1,
+//         };
 
-        this.items.push(newProduct);
-    },
-    remove(productName) {
-        const { items } = this;
-        for (let i = 0; i < items.length; i+= 1) {
-            // const item = this.items[i];
-            const { name } = items[i];
-        // for (let i = 0; i < this.items.length; i+= 1) {
-        //     // const item = this.items[i];
-        //     const { name } = this.items[i];
-            if (productName === name) {
-                console.log('нашли такой продукт: ', productName);
-                console.log('индекс: ', i);
+//         this.items.push(newProduct);
+//     },
+//     remove(productName) {
+//         const { items } = this;
+//         for (let i = 0; i < items.length; i+= 1) {
+//             // const item = this.items[i];
+//             const { name } = items[i];
+//         // for (let i = 0; i < this.items.length; i+= 1) {
+//         //     // const item = this.items[i];
+//         //     const { name } = this.items[i];
+//             if (productName === name) {
+//                 console.log('нашли такой продукт: ', productName);
+//                 console.log('индекс: ', i);
 
-                items.splice(i, 1);
-            }  
-        }
-        // for (const item of this.items) {
-        //     console.log(item);
+//                 items.splice(i, 1);
+//             }  
+//         }
+//         // for (const item of this.items) {
+//         //     console.log(item);
 
-        //     if (productName === item.name) {
-        //         console.log('нашли такой продукт ', productName);
-        //     }
-        // }
-    },
-    clear() {
-        this.items = [];
-    },
-    countTotalPrice() {
-        // console.log(this.items);
-        const { items } = this;
+//         //     if (productName === item.name) {
+//         //         console.log('нашли такой продукт ', productName);
+//         //     }
+//         // }
+//     },
+//     clear() {
+//         this.items = [];
+//     },
+//     countTotalPrice() {
+//         // console.log(this.items);
+//         const { items } = this;
 
-        let total = 0;
+//         let total = 0;
 
-        for (const { price, quantity } of items) {
-            total += price * quantity;
-        }
-        return total;
-    },
-    increaseQuantity(productName) { },
-    decreaseQuantity(productName) { },
-    getProductTotalPrice(product) { },
-};
+//         for (const { price, quantity } of items) {
+//             total += price * quantity;
+//         }
+//         return total;
+//     },
+//     increaseQuantity(productName) { },
+//     decreaseQuantity(productName) { },
+//     getProductTotalPrice(product) { },
+// };
 
-console.log(cart.getItems);
+// console.log(cart.getItems);
 
-cart.add({ name: 'apples', price: 50 });
-cart.add({ name: 'peach', price: 60 });
-cart.add({ name: 'lemons', price: 60 });
-cart.add({ name: 'lemons', price: 60 });
-cart.add({ name: 'plums', price: 110 });
-cart.add({ name: 'plums', price: 110 });
-cart.add({ name: 'plums', price: 110 });
-
-
-
-console.table(cart.getItems());
-
-console.log('Total: ', cart.countTotalPrice());
+// cart.add({ name: 'apples', price: 50 });
+// cart.add({ name: 'peach', price: 60 });
+// cart.add({ name: 'lemons', price: 60 });
+// cart.add({ name: 'lemons', price: 60 });
+// cart.add({ name: 'plums', price: 110 });
+// cart.add({ name: 'plums', price: 110 });
+// cart.add({ name: 'plums', price: 110 });
 
 
-// cart.remove('peach');
+
 // console.table(cart.getItems());
 
-// cart.clear();
-// console.log(cart.getItems());
-
-console.log('Total: ', cart.countTotalPrice());
+// console.log('Total: ', cart.countTotalPrice());
 
 
-const getProductTotalPrice = function ({ price, quantity }) {
-    return price * quantity;
-};
+// // cart.remove('peach');
+// // console.table(cart.getItems());
 
-console.log(getProductTotalPrice(cart.items[3]));
+// // cart.clear();
+// // console.log(cart.getItems());
+
+// console.log('Total: ', cart.countTotalPrice());
+
+
+// const getProductTotalPrice = function ({ price, quantity }) {
+//     return price * quantity;
+// };
+
+// console.log(getProductTotalPrice(cart.items[3]));
 
 
 
