@@ -1199,79 +1199,241 @@
 // console.log(getProductTotalPrice(cart.items[3]));
 
 
+// ===============================================================
 
 
+//  4 МОДУЛЬ
 
+//  фильтраци функции
 
+// const filter = function (array, test) {
+//     const filteredArray = [];
 
+//     for (const el of array) {
+//         console.log(el);
+//         const passed = test(el);
 
+//         if (passed) {
+//             filteredArray.push(el);
+//         }
+//     }
+//     return filteredArray;
+// }
 
+// // 1 надо написать ф-цию
+// // 2 ф-ция получает элемент массива
+// // 3 если эл-т массива удовлетворяет условию, то ф-ция вернет true
+// // 4 если эл-т массива НЕ удовлетворяет условию, то ф-ция вернет false
 
+// const callback1 = function (value) {
+//     return value >= 3;
+// };
 
+// const r1 = filter([1, 2, 3, 4, 5], callback1);
+// console.log(r1); // (3) [3, 4, 5]
 
+// const callback2 = function (value) {
+//     return value <= 4;
+// };
 
+// const r2 = filter([1, 2, 3, 4, 5, 6, 7, 8], callback2);
+// console.log(r2); // (4) [1, 2, 3, 4]
 
+// const fruits = [
+//     { name: 'apples', quantity: 200, isFresh: true },
+//     { name: 'grapes', quantity: 150, isFresh: false },
+//     { name: 'bananas', quantity: 100, isFresh: true },
+    
+// ];
 
+// const getFruitsWithQuantity = function (fruit) {
+//     return fruit.quantity >= 120;
+// };
 
+// const r3 = filter(fruits, getFruitsWithQuantity);
+// console.log(r3); // (2) [{...}, {...}]
 
 
+//  ЗАМЫКАНИЯ
 
+//  ф-ция результатом своей работы может возвращать другую ф-цию
 
+//  возвращаемая функция во время работы будет иметь доступ
+//  ко всем локаоьным переменным (области видимости)
+// родительской ф-ции, той из которой ее вернули
+//  это называется - ЗАМЫКАНИЕ
 
 
+// const fnA = function (parameter) {
+//     const innerVariable = 'значение внутренней переменной fnA';
 
+//     const innerFunction = function () {
+//         console.log(parameter);
+//         console.log(innerVariable);
+//         console.log('это вызов innerFunction');
+//     };
+//     return innerFunction;
+// };
 
+// const fnB = fnA(555);
 
+// fnB();
 
+// console.log(fnB);
 
 
+//  поваренок
 
+// const makeDish = function (shefName, dish) {
+//   console.log(`${shefName} is cooking ${dish}`);
+// };
 
+// makeDish('Mango', 'apple pie'); // Mango is cooking apple pie
+// makeDish('Mango', 'fish'); // Mango is cooking fish
+// makeDish('Mango', 'beef stew'); // Mango is cooking beef stew
 
+// makeDish('Poly', 'muffins'); // Poly is cooking muffins
+// makeDish('Poly', 'pork chops'); // Poly is cooking pork chops
+// makeDish('Poly', 'roast beef'); // Poly is cooking roast beef
 
+// const makeShef = function (name) {
+//   /*
+//    * Параметр name это локальная переменная для функции makeShef.
+//    * Это значит что она будет доступна функции makeDish через замыкание.
+//    */
+//   return function makeDish(dish) {
+//     console.log(`${name} is cooking ${dish}`);
+//   };
+// };
 
+// const mango = makeShef('Mango');
 
+// console.dir(mango);
 
+// mango('apple pie'); // Mango is cooking apple pie
+// mango('beef stew'); // Mango is cooking beef stew
 
+// const poly = makeShef('Poly');
 
+// console.dir(poly);
 
+// poly('pancakes'); // Poly is cooking pancakes
+// poly('eggs and bacon'); // Poly is cooking eggs and bacon
 
 
+//  округлятор
 
+// const rounder = function (places) {
+//     return function (number) {
+//         return Number(number.toFixed(places));
+//     };
+// };
 
+// const rounder2 = rounder(2);
+// const rounder3 = rounder(3);
 
+// console.dir(rounder2);
+// console.dir(rounder3);
 
+// console.log(rounder2(3.567));
+// console.log(rounder3(5.5267));
+// console.log(rounder2(6.1637));
+// console.log(rounder3(7.117));
 
 
+//  приватные данные и функции - скрытие реализации , интерфейс
 
+// const salaryManagerFactory = function (employeeName, baseSalary = 0) {
+//     let salary = baseSalary;
 
+//     return {
+//         raise(amount) {
+//             salary += amount;
+//         },
+//         lower(amount) {
+//             salary -= amount;
+//         },
+//         current() {
+//             return `Текущая зарплата ${employeeName} - ${salary}`;
+//         },
+//     };
+// };
 
+// const salaryManager = salaryManagerFactory('Mango', 5000);
 
+// console.log(salaryManager.current());
 
 
 
+//  стрелочные функции
 
+// const add = function (a, b, c) {
+//     console.log(arguments);
+//     return a + b + c;
+// };
 
+// const addArrow = (a, b, c) => {
+//     return a + b + c;           // неявный возврат
+// };
 
+// console.log(add(5, 10, 15));
+// console.log(addArrow(5, 10, 15));
 
 
+// const fnA = function () {
+//     return {
+//         a: 5,
+//     };
+// };
 
+// console.log(fnA());
 
+// const arrowFnA = () => ({ arrowA: 5 });
 
+// console.log(arrowFnA());
 
 
+//  переписываем фильтр на стреку
 
+//  const filter = (array, test) => {
+//     const filteredArray = [];
 
+//     for (const el of array) {
+//         console.log(el);
+//         const passed = test(el);
 
+//         if (passed) {
+//             filteredArray.push(el);
+//         }
+//     }
+//     return filteredArray;
+// }
 
+// // 1 надо написать ф-цию
+// // 2 ф-ция получает элемент массива
+// // 3 если эл-т массива удовлетворяет условию, то ф-ция вернет true
+// // 4 если эл-т массива НЕ удовлетворяет условию, то ф-ция вернет false
 
+// // const callback1 = value => value >= 3;
 
+// const r1 = filter([1, 2, 3, 4, 5], value => value >= 3);
+// console.log(r1); // (3) [3, 4, 5]
 
+// // const callback2 = value => value <= 4;
 
+// const r2 = filter([1, 2, 3, 4, 5, 6, 7, 8], value => value <= 4);
+// console.log(r2); // (4) [1, 2, 3, 4]
 
+// const fruits = [
+//     { name: 'apples', quantity: 200, isFresh: true },
+//     { name: 'grapes', quantity: 150, isFresh: false },
+//     { name: 'bananas', quantity: 100, isFresh: true },
+    
+// ];
 
+// // const getFruitsWithQuantity = fruit => fruit.quantity >= 120; 
 
+// const r3 = filter(fruits, fruit => fruit.quantity >= 120);
+// console.log(r3); // (2) [{...}, {...}]
 
-
-
-
+// ===========================================================
