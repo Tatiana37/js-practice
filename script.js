@@ -1726,3 +1726,101 @@
 
 // // Попробуем теперь
 // poly.gainXp(300); // Poly gained 300 experience points
+
+
+// 6 МОДУЛЬ
+
+// метод reduce
+
+// const tweets = [
+//   { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+//   { id: '001', likes: 2, tags: ['html', 'css'] },
+//   { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+//   { id: '003', likes: 8, tags: ['css', 'react'] },
+//   { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+// ];
+
+// const getTags = tweets =>
+//   tweets.reduce((allTags, tweet) => {
+//     allTags.push(...tweet.tags);
+
+//     return allTags;
+//   }, []);
+
+// const tags = getTags(tweets);
+// console.log(tags);
+// // Вынесем callback-функцию отдельно, а в reducе передадим ссылку на нее.
+// // Это стандартная практика если callback-функция довольно большая.
+
+// // Если в объекте-аккумуляторе acc нету своего свойства с ключем tag,
+// // то создаем его и записывает ему значение 0.
+// // В противном случае увеличиваем значение на 1.
+// const getTagStats = (acc, tag) => {
+//   if (!acc.hasOwnProperty(tag)) {
+//     acc[tag] = 0;
+//   }
+
+//   acc[tag] += 1;
+
+//   return acc;
+// };
+
+// // Начальное значение аккумулятора это пустой объект {}
+// const countTags = tags => tags.reduce(getTagStats, {});
+
+// const tagCount = countTags(tags);
+// console.log(tagCount);
+
+
+// Цепочки методов массива
+
+//     //  старый способ
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// const even = numbers.filter(x => x % 2 === 0);
+
+// const doubled = even.map(x => x * 2);
+
+// const reversed = doubled.reverse();
+
+// console.log(reversed);
+
+        //  новый способ
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// /*
+//  * Фильтруем четные числа. Далее, на результате метода filter,
+//  * вызываем map и множим на 2. После чего на результате
+//  * метода map вызываем reverse.
+//  */
+
+// const result = numbers
+//   .filter(x => x % 2 === 0)
+//   .map(y => y * 2)
+//   .reverse();
+
+// console.log(result);
+
+//  метод sort
+
+// const numbers = [2, 1, 4, 3, 5];
+// // Отсортирует по возрастанию
+// console.log('Before sort: ', numbers); // [2, 1, 4, 3, 5]
+// console.log('After sort: ', numbers.sort()); // [1, 2, 3, 4, 5]
+
+// const clients = ['Mango', 'Ajax', 'Poly', 'Chelsey'];
+
+// // Отсортирует по алфавиту
+// console.log('Before sort: ', clients); // ["Mango", "Ajax", "Poly", "Chelsey"]
+// console.log('After sort: ', clients.sort()); // ["Ajax", "Chelsey", "Mango", "Poly"]
+
+// const users = [
+//   { name: 'Mango', daysActive: 15 },
+//   { name: 'Poly', daysActive: 4 },
+//   { name: 'Ajax', daysActive: 27 },
+//   { name: 'Chelsey', daysActive: 2 },
+// ];
+
+// const sortByActiveDays = (a, b) => a.daysActive - b.daysActive;
+
+// console.log(users.sort(sortByActiveDays));
